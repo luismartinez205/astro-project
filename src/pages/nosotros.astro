@@ -1,0 +1,18 @@
+---
+import Layout from "@/layouts/layout.base.astro";
+import Navbar from "@/components/navbar.astro";
+import Footer from "@/components/footer.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+const items = [
+  { label: "Inicio", href: "/" },
+  { label: "Nosotros", href: "/nosotros", }
+  
+];
+---
+
+<Layout title="Nosotros">
+  <Navbar />
+
+  <Breadcrumb items={items} />
+  <Footer/>
+</Layout>

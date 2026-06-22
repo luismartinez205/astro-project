@@ -1,0 +1,291 @@
+---
+import Layout from "@/layouts/layout.base.astro";
+import Navbar from "@/components/navbar.astro";
+import Footer from "@/components/footer.astro";
+import Button from "@/components/button.astro";
+import Icons from "@/components/icons.astro";
+import Tower from "@/components/tower.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+const items = [
+  { label: "Inicio/", href: "/" }
+  
+];
+---
+
+<style>
+  .card-img-top {
+    height: 170px;
+    transition: filter 0.3s ease;
+  }
+
+  .card-img-top:hover {
+    filter: grayscale(100%);
+  }
+
+  h1 {
+    padding: 40px;
+    color: #4300ff;
+  }
+
+  .card {
+    width: 15rem;
+  }
+
+  .span-4 {
+    height: 400px;
+    background-color: #fff;
+  }
+
+  .textcenter {
+    padding: 20px;
+    text-align: start;
+  }
+  .stats {
+    padding: 41px 20px;
+    background: #0000ff; /* Fondo oscuro */
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    background: #1e293b;
+    color: white;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .stat-card h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .stat-card p {
+    font-size: 1rem;
+    color: #cbd5e1;
+  }
+
+  
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 1.5em;
+    }
+
+    .card {
+      width: 18rem;
+    }
+
+    .span-4 {
+      grid-column: 1/13;
+    }
+  }
+</style>
+<Layout title="Graphenix Studio">
+  <Navbar />
+  <div class="hero">
+    <Button title="Contactanos" />
+  </div>
+  <div class="text-center">
+    <Breadcrumb items={items} />
+    <h1 class="display-3">Nuestros Servicios</h1>
+  </div>
+  <div class="container d-flex justify-center">
+    <div class="row gap-2">
+      <div class="col-3 col-tel-12">
+        <div class="card">
+          <img
+            src="https://www.arcos.cl/wp-content/uploads/2023/10/digmu-900x600-admision2024.jpg"
+            class="card-img-top"
+            alt="Imagen"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title">Diseño Grafico</h5>
+            <p class="card-text">
+              Creamos piezas visuales impactantes que fortalecen la identidad y presencia de tu marca.
+            </p>
+            <a href="#" class="btn btn-primary w-100">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 col-tel-12">
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2wTfKKOqAwARwj83u2O5nDvfEq8dJTOj4DQ&s"
+            class="card-img-top"
+            alt="Imagen"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title">Marketing</h5>
+            <p class="card-text">
+              Impulsamos tu negocio con estrategias digitales enfocadas en atraer y convertir clientes.
+            </p>
+            <a href="#" class="btn btn-primary w-100">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 col-tel-12">
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRExv-8-P8Qwndh9aznTYHpqCpV2v833PXLZw&s"
+            class="card-img-top"
+            alt="Imagen"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title">Diseño web</h5>
+            <p class="card-text">
+              Diseñamos sitios web modernos, atractivos y adaptados a todos los dispositivos.
+            </p>
+            <a href="#" class="btn btn-primary w-100">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 col-tel-12">
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ526wDj9Nk9AVXo6sGdH55NqTCIbLfw--OrA&s"
+            class="card-img-top"
+            alt="Imagen"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title">Desarrollo Web</h5>
+            <p class="card-text">
+              Desarrollamos soluciones web rápidas, funcionales y optimizadas para tu negocio.
+            </p>
+            <a href="#" class="btn btn-primary w-100">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 class="display-4 text-center">
+    ¿ESTÁS DESAPROVECHANDO EL POTENCIAL DE TU DISEÑO GRÁFICO? DESCUBRE LOS
+    OBSTÁCULOS QUE PODRÍAN ESTAR FRENANDO TU MARCA
+  </h1>
+  <div class="d-grid col-8-g">
+    <div class="span-4 text-center">
+      <Icons width="4em" height="4em" color="blue" />
+      <h1 class="display-5">FALTA DE COHESION EN LA IMAGEN DE LA MARCA</h1>
+      <p class="text-center textcenter">
+        Un diseño efectivo va más allá de la apariencia. Una identidad visual
+        coherente permite que tu negocio sea fácilmente reconocible y recordado.
+        Si tu imagen no refleja la esencia y los valores de tu marca, es momento
+        de fortalecer tu presencia visual.
+      </p>
+    </div>
+    <div class="span-4 text-center">
+      <Tower width="4em" height="4em" color="blue" />
+      <h1 class="display-5">DIFICULTAD PARA DIFERENCIARSE EN EL MERCADO</h1>
+      <p class="text-center textcenter">
+        En un entorno digital saturado, destacar requiere más que un diseño
+        bonito. Una comunicación visual estratégica puede ayudarte a atraer la
+        atención de tus clientes ideales y posicionar tu negocio por encima de
+        la competencia.
+      </p>
+    </div>
+  </div>
+  <section class="stats">
+    <h2 class="text-white text-center p-3">CIFRAS QUE NOS RESPALDAN</h2>
+    <div class="container">
+      <div class="stat-card">
+        <h2
+          class="counter"
+          data-target="30"
+          data-prefix="+"
+          data-duration="2000"
+        >
+          0
+        </h2>
+        <p>Proyectos realizados</p>
+      </div>
+
+      <div class="stat-card">
+        <h2
+          class="counter"
+          data-target="30"
+          data-prefix="+"
+          data-duration="1500"
+        >
+          0
+        </h2>
+
+        <p>Clientes satisfechos</p>
+      </div>
+
+      <div class="stat-card">
+        <h2
+          class="counter"
+          data-target="12"
+          data-prefix="+"
+          data-suffix=""
+          data-duration="2000"
+        >
+          0
+        </h2>
+        <p>Años de experiencia</p>
+      </div>
+    </div>
+  </section>
+  <Footer/>
+</Layout>
+
+<script is:inline>
+  const counters = document.querySelectorAll(".counter");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+
+          const target = Number(counter.dataset.target);
+          const duration = Number(counter.dataset.duration);
+          const prefix = counter.dataset.prefix || "";
+          const suffix = counter.dataset.suffix || "";
+
+          let start = 0;
+          const increment = target / (duration / 16);
+
+          function updateCounter() {
+            start += increment;
+
+            if (start < target) {
+              counter.textContent = prefix + Math.ceil(start) + suffix;
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = prefix + target + suffix;
+            }
+          }
+
+          updateCounter();
+
+          // Evita que vuelva a ejecutarse
+          observer.unobserve(counter);
+        }
+      });
+    },
+    {
+      threshold: 0.4, // Se activa cuando se ve el 50% del elemento
+    },
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
+</script>

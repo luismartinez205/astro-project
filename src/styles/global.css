@@ -1,0 +1,32 @@
+ 
+
+    h1 {
+        color: #333;
+    }
+
+    a{
+      text-decoration: none;
+     
+    }
+
+    button {
+        
+        border: none;        
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .hero{
+        background-image: url('/src/assets/A4\ -\ 1.jpg');
+        height: 400px;
+        background-repeat: no-repeat;
+       background-size: cover;
+    }
+    
+    @media (max-width: 576px) {
+    .hero{    
+    background-size: cover;
+    background-position: -145px 0px;
+    }
+}

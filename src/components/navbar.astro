@@ -1,0 +1,53 @@
+---
+
+import "../styles/aircss.css";
+import "../styles/global.css";
+
+
+---
+
+<style>
+  .logo {
+           width: 285px;
+    }
+</style>
+
+<header class="container-fluid sticky-top">
+    <div class="container-bar"></div>
+    <nav class="navbar bg-white">
+      <div class="nav-logo">
+        <img src="/src/assets/Group 4.png" class="logo" />
+      </div>
+
+      <button class="nav-toggle" data-toggle="menu" data-target="#menu">
+        ☰
+      </button>
+       
+      <ul class="nav-menu" id="menu">       
+        <li class="m-2"><a href="/">Inicio</a></li>
+         <li class="dropdown m-2">
+          <button class="dropdown-toggle">Servicios</button>
+
+          <ul class="nav menu dropdown-menu">
+            <li><a href="#">Diseño Web</a></li>
+            <li>
+              <hr>
+            </li>
+            <li><a href="#">Branding</a></li>
+              <li>
+                <hr>
+              </li>
+            <li><a href="#">Marketing</a></li>
+          </ul>
+
+        </li>
+        <li class="m-2"><a href="/nosotros">Nosotros</a></li>
+        <li class="m-2"><a href="/contacto">Contacto</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  
+    
+
