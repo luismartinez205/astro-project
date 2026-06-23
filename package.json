@@ -23,5 +23,9 @@
     "@types/markdown-it": "^14.1.2",
     "astro": "^6.4.8",
     "markdown-it": "^14.2.0"
+  },
+  "dependencies": {
+    "@types/three": "^0.184.1",
+    "three": "^0.184.0"
   }
 }

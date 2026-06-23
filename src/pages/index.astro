@@ -6,6 +6,7 @@ import Button from "@/components/button.astro";
 import Icons from "@/components/icons.astro";
 import Tower from "@/components/tower.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import TreeCanvas from "../components/TreeCanvas.astro";
 
 const items = [
   { label: "Inicio/", href: "/" }
@@ -79,6 +80,7 @@ const items = [
     font-size: 1rem;
     color: #cbd5e1;
   }
+  
 
   
   @media (max-width: 576px) {
@@ -244,6 +246,7 @@ const items = [
       </div>
     </div>
   </section>
+  <TreeCanvas/>
   <Footer/>
 </Layout>
 
