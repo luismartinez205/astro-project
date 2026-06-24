@@ -1,0 +1,341 @@
+---
+import Instagram from "@/components/instagram.astro";
+import Facebook from "@/components/facebook.astro";
+import Linkedin from "@/components/linkedin.astro";
+import Twitter from "@/components/twitter.astro";
+---
+<style>
+    .footer {
+      background-color: #4ade56;
+      color: #000;
+      padding: 40px 48px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr 280px;
+      gap: 32px;
+      padding-bottom: 36px;
+    }
+
+    /* ── COL 1: LOGO + CONTACTO + REDES ── */
+    .col-brand .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      margin-bottom: 24px;
+      display: inline-block;
+      font-style: italic;
+    }
+
+    .contact-group {
+      margin-bottom: 20px;
+    }
+
+    .contact-group h4,
+    .social-group h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color:white;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #000;
+      margin-bottom: 7px;
+      text-decoration: none;
+    }
+
+    .contact-item:hover { color: #ffffff; }
+
+    .contact-item i {
+      font-size: 15px;
+      color: #ffffff;
+      width: 18px;
+      text-align: center;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 3px;
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+     
+      color: #000;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .social-icons a:hover { background: rgba(255,255,255,0.35); }
+
+    /* ── COL 2 & 3: LINKS ── */
+    .col-links h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .col-links ul {
+      list-style: none;
+    }
+
+    .col-links ul li {
+      margin-bottom: 8px;
+    }
+
+    .col-links ul li a {
+      font-size: 13px;
+      color: #000;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .col-links ul li a:hover { color: #ffffff; }
+
+    /* ── COL 4: SUSCRIPCIÓN + PAGOS + MI CUENTA ── */
+    .col-right h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color:#fff;
+      
+    }
+
+    .col-right .subtitle {
+      font-size: 12px;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .subscribe-row {
+      display: flex;
+      gap: 0;
+      margin-bottom: 22px;
+      align-items: center;
+    }
+
+    .subscribe-row input {
+      flex: 1;
+      padding: 9px 12px;
+      font-size: 12px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+      background: #ffffff;
+      color: #222;
+      height:38px;
+    }
+
+    .subscribe-row input::placeholder { color: #aaa; }
+
+    .subscribe-row button {
+      padding: 9px 16px;
+      background: #111;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+
+    .subscribe-row button:hover { background: #333; }
+
+    .payment-logos {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .payment-badge {
+      background: #ffffff;
+      border-radius: 5px;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #1a7a2e;
+      letter-spacing: 0.3px;
+    }
+
+    /* brand colours for payment badges */
+    .badge-clave   { background: #e30613; color: #fff; }
+    .badge-master  { background: #ff5f00; color: #fff; }
+    .badge-visa    { background: #1a1f71; color: #fff; }
+    .badge-yappy   { background: #f7b900; color: #333; }
+    .badge-amex    { background: #007bc1; color: #fff; }
+
+    .account-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .account-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #d4edd9;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .account-link:hover { color: #fff; }
+
+    .account-link .icon-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    /* ── BOTTOM BAR ── */
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding: 14px 0;
+      text-align: center;
+      font-size: 12px;
+      color: #c8e6cc;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .col-right { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 600px) {
+      .footer { padding: 32px 20px 0; }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .col-right { grid-column: auto; }
+    }
+</style>
+<footer class="footer">
+  <div class="footer-grid">
+
+    <!-- COL 1: Marca -->
+    <div class="col-brand">
+      <img src="src/assets/Group 4.png" alt="" class="logo">
+
+      <div class="contact-group">
+        <h4>Contáctenos:</h4>
+        <a class="contact-item" href="tel:2043030">
+          <i class="fa-solid fa-phone"></i> 204-3030
+        </a>
+        <a class="contact-item" href="https://wa.me/5076607900" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> 6607-9000
+        </a>
+        <a class="contact-item" href="mailto:atencionalcliente@panafoto.com">
+          <i class="fa-regular fa-envelope"></i> atencionalcliente@panafoto.com
+        </a>
+      </div>
+
+      <div class="social-group">
+        <h4>Síguenos:</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><Instagram/></i></a>
+          <a href="#" aria-label="Facebook"><Facebook/></i></a>
+          <a href="#" aria-label="X / Twitter"><Linkedin/></i></a>
+          <a href="#" aria-label="TikTok"><Twitter/></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL 2: Información -->
+    <div class="col-links">
+      <h4>Información:</h4>
+      <ul>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Horario y Teléfono de Sucursales</a></li>
+        <li><a href="#">Talleres Autorizados</a></li>
+        <li><a href="#">Registro de bodas y eventos</a></li>
+        <li><a href="#">Exportaciones</a></li>
+        <li><a href="#">Sobre nosotros</a></li>
+      </ul>
+    </div>
+
+    <!-- COL 3: Extras -->
+    <div class="col-links">
+      <h4>Extras:</h4>
+      <ul>
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Política de Pedidos via internet</a></li>
+        <li><a href="#">Condiciones de la Garantía</a></li>
+        <li><a href="#">Términos bodas y eventos</a></li>
+        <li><a href="#">Beneficios Bac - Panafoto</a></li>
+      </ul>
+    </div>
+
+    <!-- COL 4: Suscripción + Pagos + Mi Cuenta -->
+    <div class="col-right">
+      <h4>Suscríbete:</h4>
+      <p class="subtitle">Recibe noticias, ofertas y novedades de Panafoto.</p>
+      <div class="subscribe-row">
+        <input type="email" placeholder="Correo Electrónico" />
+        <button type="button">ENVIAR</button>
+      </div>
+
+      <h4>Métodos de pago</h4>
+      <div class="payment-logos" style="margin-top:8px;">
+        <span class="payment-badge badge-clave">Clave</span>
+        <span class="payment-badge badge-master">Mastercard</span>
+        <span class="payment-badge badge-visa">VISA</span>
+        <span class="payment-badge badge-yappy">yappy</span>
+        <span class="payment-badge badge-amex">AMEX</span>
+      </div>
+
+      <h4 style="margin-bottom:10px;">Mi Cuenta:</h4>
+      <div class="account-row">
+        <a href="#" class="account-link">
+          <span class="icon-circle"><i class="fa-solid fa-user"></i></span>
+          Ingresar
+        </a>
+        <a href="#" class="account-link">
+          <span class="icon-circle"><i class="fa-solid fa-user-plus"></i></span>
+          Crear
+        </a>
+        <a href="#" class="account-link">
+          <span class="icon-circle"><i class="fa-solid fa-bag-shopping"></i></span>
+          Historial de compra
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    Panafoto ® todos los Derechos Reservados © 2025
+  </div>
+</footer>
