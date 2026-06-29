@@ -3,6 +3,9 @@ import Instagram from "@/components/instagram.astro";
 import Facebook from "@/components/facebook.astro";
 import Linkedin from "@/components/linkedin.astro";
 import Twitter from "@/components/twitter.astro";
+import Phone from "@/components/phone.astro";
+import Wha from "@/components/wha.astro";
+import Master from "@/components/master.astro";
 ---
 <style>
     .footer {
@@ -215,13 +218,15 @@ import Twitter from "@/components/twitter.astro";
 
     /* ── BOTTOM BAR ── */
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding: 14px 0;
-      text-align: center;
-      font-size: 12px;
-      color: #c8e6cc;
+    border-top: 1px solid rgb(0 0 0 / 25%);
+    padding: 14px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
     }
-
+   .text-dark{
+    color:#000;
+   }
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .footer-grid {
@@ -244,18 +249,18 @@ import Twitter from "@/components/twitter.astro";
 
     <!-- COL 1: Marca -->
     <div class="col-brand">
-      <img src="src/assets/Group 4.png" alt="" class="logo">
+      <img src="src/assets/Group 4.png" alt="" class="logo" style="filter: grayscale(1);">
 
       <div class="contact-group">
         <h4>Contáctenos:</h4>
         <a class="contact-item" href="tel:2043030">
-          <i class="fa-solid fa-phone"></i> 204-3030
+          <Phone width="30px" color="#455a64"/> 204-3030
         </a>
         <a class="contact-item" href="https://wa.me/5076607900" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> 6607-9000
+         <Wha width="30px" color="#000"/> 00-507 65153550
         </a>
         <a class="contact-item" href="mailto:atencionalcliente@panafoto.com">
-          <i class="fa-regular fa-envelope"></i> atencionalcliente@panafoto.com
+          <i class="fa-regular fa-envelope"></i> atencionalcliente@graphenixstudio.com
         </a>
       </div>
 
@@ -309,10 +314,8 @@ import Twitter from "@/components/twitter.astro";
       <h4>Métodos de pago</h4>
       <div class="payment-logos" style="margin-top:8px;">
         <span class="payment-badge badge-clave">Clave</span>
-        <span class="payment-badge badge-master">Mastercard</span>
-        <span class="payment-badge badge-visa">VISA</span>
-        <span class="payment-badge badge-yappy">yappy</span>
-        <span class="payment-badge badge-amex">AMEX</span>
+        <Master width="40px"/>
+        
       </div>
 
       <h4 style="margin-bottom:10px;">Mi Cuenta:</h4>
@@ -333,9 +336,9 @@ import Twitter from "@/components/twitter.astro";
     </div>
 
   </div>
-
+  
   <!-- Bottom bar -->
   <div class="footer-bottom">
-    Panafoto ® todos los Derechos Reservados © 2025
+   <span class="text-dark">Graphenix Studio</span>  ® todos los Derechos Reservados © 2026
   </div>
 </footer>
